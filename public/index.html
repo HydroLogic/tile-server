@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
 	<title>tile-server</title>
 
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js?2"></script>
+	<link href="//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.css" rel="stylesheet">
+	<script src="//api.tiles.mapbox.com/mapbox.js/v1.5.2/mapbox.js"></script>
+
 	<style type="text/css">
 	html,
 	body,
@@ -20,11 +23,14 @@
 	<div id="map"></div>
 
 	<script type="text/javascript">
+	/***
 	var map = L.map('map').setView([51.505, -0.09], 8);
 
 	L.tileLayer('/{z}/{x}/{y}.png', {
 	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
+	***/
+	var map = L.mapbox.map('map', '/info.json');
 
 	</script>
 </body>

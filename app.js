@@ -35,6 +35,21 @@ app.use(express.logger('dev'));
 app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 
+app.get('/info.json', function(req, res) {
+	mbtiles.getInfo(function(err, info) {
+		if (err) {
+			console.error(err);
+			return res.send(500, err);
+		}
+
+		// serving locally
+		info.scheme = 'xyz';
+		info.tiles = ['/{z}/{x}/{y}.png'];
+
+		res.send(info);
+	});
+});
+
 app.get('/:z/:x/:y.png', function(req, res) {
 	var x = +req.params.x
 	  , y = +req.params.y

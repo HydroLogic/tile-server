@@ -19,6 +19,7 @@
     "tilelive": "~4.5.3",
     "mbtiles": "~0.4.0",
     "express": "~3.4.7",
-    "commander": "~2.1.0"
+    "commander": "~2.1.0",
+    "hjs": "~0.0.6"
   }
 }

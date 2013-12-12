@@ -5,7 +5,8 @@ var fs = require('fs')
   , path = require('path');
 
 // third-party
-var express = require('express')
+var _ = require('underscore')
+  , express = require('express')
   , tilelive = require('tilelive')
   , MBTiles = require('mbtiles');
 
@@ -51,6 +52,15 @@ TileServer.prototype.setupApp = function() {
             req.mbtiles = mbtiles;
             next();
         });
+    });
+
+    app.get('/', function(req, res) {
+        // turn this into something mustache can iterate over
+        var tiles = _.map(server.tiles, function(value, key) {
+            return {id: key, path: value};
+        });
+
+        res.render('list', {tiles: tiles});
     });
 
     app.get('/:mbtiles', function(req, res) {

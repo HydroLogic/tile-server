@@ -23,7 +23,8 @@
     "mbtiles": "~0.4.0",
     "express": "~3.4.7",
     "commander": "~2.1.0",
-    "hjs": "~0.0.6"
+    "hjs": "~0.0.6",
+    "underscore": "~1.5.2"
   },
   "bin": {
     "tile-server": "./bin/tile-server"

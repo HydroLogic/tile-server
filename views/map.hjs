@@ -30,7 +30,7 @@
 	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
 	***/
-	var map = L.mapbox.map('map', '/info.json');
+	var map = L.mapbox.map('map', {{{tilejson}}});
 
 	</script>
 </body>

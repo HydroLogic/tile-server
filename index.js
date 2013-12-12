@@ -95,7 +95,7 @@ TileServer.prototype.setupApp = function() {
 
         req.mbtiles[get](z, x, y, function(err, tile_data, options) {
 
-            if (err && err.message.match(/Not found/i)) {
+            if (err && err.message.match(/(Not found)|(does not exist)/i)) {
                 return res.send(404, err.message);
             }
 

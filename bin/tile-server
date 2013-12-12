@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var TileServer = require('../');
+
+var cmd = require('commander')
+    .version(require('../package.json').version)
+    .option('-p, --port <port>', 'specify the port [3000]', Number, 3001)
+    .parse(process.argv);
+
+new TileServer(cmd.args.shift() || '.', function(err, server) {
+    console.log('Tiles found: \n');
+    console.dir(server.tiles);
+
+    server.listen(cmd.port, function() { 
+        if (err) { throw err; }
+        console.log('Serving tiles at localhost:%s', cmd.port);
+    });
+});

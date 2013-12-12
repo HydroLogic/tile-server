@@ -1,12 +1,15 @@
 {
   "name": "tile-server",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple test server for mbtiles",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eyeseast/tile-server.git"
+  },
   "keywords": [
     "map",
     "tiles",
@@ -21,5 +24,14 @@
     "express": "~3.4.7",
     "commander": "~2.1.0",
     "hjs": "~0.0.6"
+  },
+  "bin": {
+    "tile-server": "./bin/tile-server"
+  },
+  "readmeFilename": "README.md",
+  "devDependencies": {},
+  "gitHead": "17005fe0c9665795096d14ce5cc9dffc162515c2",
+  "bugs": {
+    "url": "https://github.com/eyeseast/tile-server/issues"
   }
 }

@@ -12,11 +12,6 @@ var express = require('express')
 // export
 module.exports = TileServer;
 
-var cmd = require('commander')
-    .version(require('./package.json').version)
-    .option('-p, --port <port>', 'specify the port [3000]', Number, 3001)
-    .parse(process.argv);
-
 // setup mbtiles
 tilelive.protocols['mbtiles:'] = MBTiles;
 
@@ -143,16 +138,4 @@ TileServer.prototype.getMBTiles = function(id, callback) {
 TileServer.prototype.listen = function(port, callback) {
     this.app.listen(port, callback);
     return this;
-}
-
-if (module === require.main) {
-    var server = new TileServer(cmd.args.shift() || '.', function(err, server) {
-        console.log('Tiles found: \n');
-        console.dir(server.tiles);
-
-        server.listen(cmd.port, function() { 
-            if (err) { throw err; }
-            console.log('Serving tiles at localhost:%s', cmd.port);
-        });
-    });
 }

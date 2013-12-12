@@ -1,0 +1,24 @@
+{
+  "name": "tile-server",
+  "version": "0.0.0",
+  "description": "A simple test server for mbtiles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "map",
+    "tiles",
+    "mbtiles",
+    "tms"
+  ],
+  "author": "Chris Amico",
+  "license": "BSD",
+  "dependencies": {
+    "tilelive": "~4.5.3",
+    "mbtiles": "~0.4.0",
+    "express": "~3.4.7",
+    "commander": "~2.1.0"
+  }
+}
